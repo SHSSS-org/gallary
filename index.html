@@ -9,6 +9,8 @@
   <style>
     body { background-color: #fafafa; }
     .card:hover { transform: scale(1.03); transition: 0.3s; }
+    .airbnb-red { color: #FF385C; }
+    .bg-airbnb-red { background-color: #FF385C; }
   </style>
 </head>
 <body class="font-sans">
@@ -16,8 +18,12 @@
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-10">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-800">SHSSS Headlines</h1>
-      <span class="text-gray-500">Gallery</span>
+      <h1 class="text-2xl font-bold airbnb-red">SHSSS Headlines</h1>
+      <nav>
+        <a href="index.html" class="bg-airbnb-red text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition">
+          Home
+        </a>
+      </nav>
     </div>
   </header>
 
@@ -33,11 +39,15 @@
       .then(response => response.json())
       .then(data => {
         const gallery = document.getElementById("gallery");
-        data.images.forEach(imgUrl => {
+        data.images.forEach(item => {
           const card = document.createElement("div");
-          card.className = "card bg-white rounded-2xl shadow-md overflow-hidden";
+          card.className = "card bg-white rounded-2xl shadow-md overflow-hidden flex flex-col";
           card.innerHTML = `
-            <img src="${imgUrl}" alt="Gallery Image" class="w-full h-48 object-cover">
+            <img src="${item.url}" alt="${item.title}" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h2 class="text-lg font-semibold text-gray-800">${item.title}</h2>
+              <p class="text-gray-500 text-sm">${item.caption}</p>
+            </div>
           `;
           gallery.appendChild(card);
         });
