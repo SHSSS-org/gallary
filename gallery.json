@@ -1,8 +1,24 @@
 {
   "images": [
-    "https://picsum.photos/400/300?random=1",
-    "https://picsum.photos/400/300?random=2",
-    "https://picsum.photos/400/300?random=3",
-    "https://picsum.photos/400/300?random=4"
+    {
+      "url": "https://picsum.photos/400/300?random=1",
+      "title": "Morning Assembly",
+      "caption": "Students gathered for the daily school assembly."
+    },
+    {
+      "url": "https://picsum.photos/400/300?random=2",
+      "title": "Sports Day",
+      "caption": "Highlights from the annual sports competition."
+    },
+    {
+      "url": "https://picsum.photos/400/300?random=3",
+      "title": "Science Fair",
+      "caption": "Innovative projects displayed by students."
+    },
+    {
+      "url": "https://picsum.photos/400/300?random=4",
+      "title": "Cultural Event",
+      "caption": "A colorful evening of performances and music."
+    }
   ]
 }
